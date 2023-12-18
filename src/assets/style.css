@@ -1,0 +1,74 @@
+body {
+  background-color: #588157;
+}
+
+h2 {
+  text-align: center;
+}
+
+.gamearea {
+  max-width: 800px;
+  border: solid 1px black;
+  width: 100%;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dealer__Cards {
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 20px;
+}
+
+.dealer__CardHidden:first-of-type {
+  position: relative;
+}
+
+.dealer__CardHidden:first-of-type::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-image: url("https://deckofcardsapi.com/static/img/back.png");
+  background-size: cover;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.options button {
+  border: none;
+  background-color: #a7c957;
+  color: black;
+  padding: 15px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.options button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+
+.busted {
+  position: fixed;
+  z-index: 150;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 30px;
+}
